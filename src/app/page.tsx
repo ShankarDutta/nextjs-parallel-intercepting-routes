@@ -1,4 +1,7 @@
+import { Button } from "@/components/shadcnui/button";
+import { ArrowUpRightIcon } from "lucide-react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Nextjs Starter Frontend",
@@ -7,10 +10,36 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <section className="grid h-[90dvh] place-items-center">
-      <div className="space-y-2 text-center">
-        <h1 className="text-5xl font-semibold">Nextjs Starter Frontend</h1>
-        <h2 className="text-3xl">Production grade Next.js starter template</h2>
+    <section className="grid h-[96dvh] place-items-center">
+      <div className="mx-auto max-w-3xl space-y-6 text-center">
+        <h1 className="text-2xl font-medium tracking-tight md:text-5xl">
+          Next.js Parallel & Intercepting Routes Through Project
+        </h1>
+
+        <p className="text-muted-foreground text-base leading-relaxed">
+          Explore how Next.js Parallel and Intercepting Routes work through
+          practical examples. Learn modern routing patterns for building
+          seamless, dynamic, and scalable web applications.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Link href="/">
+            <Button size="lg">
+              Explore Route Demo
+              <ArrowUpRightIcon className="ml-1.5 size-4" />
+            </Button>
+          </Link>
+
+          <Link
+            href="https://github.com/ShankarDutta/nextjs-parallel-intercepting-routes"
+            target="_blank">
+            <Button
+              variant="ghost"
+              size="lg">
+              View Source Code
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );
