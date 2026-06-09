@@ -1,22 +1,24 @@
 "use client";
 
-import { WallpaperType } from "@/lib/type";
+import { WallpaperCardProps } from "@/lib/type";
+import { Route } from "next";
 import Image from "next/image";
-type WallpaperCardProps = {
-  info: WallpaperType;
-};
+import Link from "next/link";
 
 const WallpaperCard = ({ info }: WallpaperCardProps) => {
   return (
-    <Image
+    <Link
       key={info.id}
-      src={info.urls.regular}
-      alt={`wallpaper ${info.id}`}
-      height={Number(info.height)}
-      width={Number(info.width)}
-      loading="eager"
-      className="h-auto w-full rounded-lg"
-    />
+      href={`/wallapers/${info.id}` as Route}>
+      <Image
+        src={info.urls.regular}
+        alt={`wallpaper ${info.id}`}
+        height={info.height}
+        width={info.width}
+        loading="eager"
+        className="h-auto w-full rounded-lg"
+      />
+    </Link>
   );
 };
 
