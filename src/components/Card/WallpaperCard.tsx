@@ -9,7 +9,7 @@ const WallpaperCard = ({ info }: WallpaperCardProps) => {
   return (
     <Link
       key={info.id}
-      href={`/wallapers/${info.id}` as Route}>
+      href={`/wallpapers/${info.id}` as Route}>
       <Image
         src={info.urls.regular}
         alt={`wallpaper ${info.id}`}

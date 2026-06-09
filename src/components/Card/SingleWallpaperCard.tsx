@@ -1,3 +1,4 @@
+"use client";
 import { SingleWallpaperCardType } from "@/lib/type";
 import { ArrowLeftIcon } from "lucide-react";
 import Image from "next/image";
@@ -14,10 +15,10 @@ import UserAvtar from "../UserAvtar";
 
 const SingleWallpaperCard = ({ info }: SingleWallpaperCardType) => {
   return (
-    <Card className="border-0 shadow-none">
+    <Card className="border-0 shadow-none ring-0">
       <CardHeader className="">
         <section className="flex flex-wrap items-center justify-between gap-4">
-          <Link href="/wallapers">
+          <Link href="/wallpapers">
             <Button variant="link">
               <ArrowLeftIcon />
               Back

@@ -4,6 +4,11 @@ export type RootLayoutProps = {
   children: ReactNode;
 };
 
+export type WallpaperLayotProps = {
+  children: ReactNode;
+  model: ReactNode;
+};
+
 export type WallpaperType = {
   id: string;
   description: string;

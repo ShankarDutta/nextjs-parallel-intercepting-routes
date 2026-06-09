@@ -33,7 +33,7 @@ const Header = () => {
           : null}
 
           <Link
-            href={"/wallapers"}
+            href={"/wallpapers"}
             className="hidden md:block">
             Wallpapers
           </Link>

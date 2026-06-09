@@ -23,7 +23,7 @@ const page = () => {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link href="/wallapers">
+          <Link href="/wallpapers">
             <Button size="lg">
               Explore Route Demo
               <ArrowUpRightIcon className="ml-1.5 size-4" />
