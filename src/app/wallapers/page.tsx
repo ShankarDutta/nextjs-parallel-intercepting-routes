@@ -1,17 +1,30 @@
-import { Metadata } from "next";
+import WallpaperCard from "@/components/Card/WallpaperCard";
+import WallpaperMisonary from "@/components/WallpaperMisonary";
+import apiConfigaration from "@/lib/apiConfigaration";
 
-export const metadata: Metadata = {
-  title: "Beautiful Wallpapers for Every Screen",
-  description:
-    "Discover high-quality wallpapers curated for desktop, laptop, tablet, and mobile devices.",
-};
+const Page = async () => {
+  const getWallpaper = await apiConfigaration();
 
-const page = () => {
+  if (!getWallpaper.isSuccess) {
+    return (
+      <div className="grid h-dvh place-items-center">
+        Failed to load wallpapers.
+      </div>
+    );
+  }
+
   return (
-    <section className="grid h-dvh place-items-center">
-      Your Wall papers
+    <section>
+      <WallpaperMisonary>
+        {getWallpaper.data.map((img) => (
+          <WallpaperCard
+            key={img.id}
+            info={img}
+          />
+        ))}
+      </WallpaperMisonary>
     </section>
   );
 };
 
-export default page;
+export default Page;

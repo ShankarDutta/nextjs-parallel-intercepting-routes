@@ -1,12 +1,8 @@
 import Header from "@/components/Header/Header";
 import ThemeProvider from "@/components/Providers/ThemeProvider";
 import { geistMono, geistSans } from "@/lib/fonts";
-import { ReactNode } from "react";
+import { RootLayoutProps } from "@/lib/type";
 import "./globals.css";
-
-type RootLayoutProps = {
-  children: ReactNode;
-};
 
 const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (

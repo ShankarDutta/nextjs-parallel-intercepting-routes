@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 const page = () => {
   return (
-    <section className="grid h-[96dvh] place-items-center">
+    <section className="grid h-[84dvh] place-items-center">
       <div className="mx-auto max-w-3xl space-y-6 text-center">
         <h1 className="text-2xl font-medium tracking-tight md:text-5xl">
           Next.js Parallel & Intercepting Routes Through Project

@@ -1,12 +1,16 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggleButton from "../ThemeToggleButton";
 import { Button } from "../shadcnui/button";
 import { Separator } from "../shadcnui/separator";
 
 const Header = () => {
+  const path = usePathname();
+
   return (
     <header
-      className="fixed right-0 left-0 border-b shadow"
+      className="sticky top-0 border-b shadow backdrop-blur-lg"
       aria-label="app-header">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link href={"/"}>
@@ -18,6 +22,16 @@ const Header = () => {
         </Link>
 
         <nav className="flex items-center gap-2">
+          {/* display home page redirect menu item  */}
+
+          {path === "/wallapers" ?
+            <Link
+              href="/"
+              className="pr-3">
+              Home
+            </Link>
+          : null}
+
           <Link
             href={"/wallapers"}
             className="hidden md:block">
