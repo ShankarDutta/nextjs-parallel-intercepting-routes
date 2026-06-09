@@ -4,10 +4,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Nextjs Starter Frontend",
-  description: "Production grade Next.js starter template",
+  title: "Next.js Parallel & Intercepting Routes | Practical Demo Project",
+  description:
+    "A hands-on Next.js project demonstrating Parallel Routes and Intercepting Routes with real-world examples. Perfect for students learning the App Router.",
 };
-
 const page = () => {
   return (
     <section className="grid h-[96dvh] place-items-center">
@@ -23,7 +23,7 @@ const page = () => {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link href="/">
+          <Link href="/wallapers">
             <Button size="lg">
               Explore Route Demo
               <ArrowUpRightIcon className="ml-1.5 size-4" />
