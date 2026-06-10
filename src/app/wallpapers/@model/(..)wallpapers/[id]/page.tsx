@@ -8,28 +8,18 @@ import {
 } from "@/components/shadcnui/card";
 import { Dialog, DialogContent } from "@/components/shadcnui/dialog";
 import UserAvtar from "@/components/UserAvtar";
-import apiConfigaration from "@/lib/apiConfigaration";
+import getWallpaperById from "@/lib/getWallpaperById";
 import { dynamicPageProps } from "@/lib/type";
 import Image from "next/image";
 
 const page = async ({ params }: dynamicPageProps) => {
   const { id } = await params;
-  const { data, isSuccess } = await apiConfigaration();
+  const { data, isSuccess } = await getWallpaperById(id);
 
-  if (!isSuccess) {
+  if (!isSuccess || !data) {
     return (
       <div className="grid h-dvh place-items-center">
-        Unable to load wallpapers. Please try again later.
-      </div>
-    );
-  }
-
-  const getImg = data.find((img) => img.id === id);
-
-  if (!getImg) {
-    return (
-      <div className="grid h-dvh place-items-center">
-        Failed to load wallpaper.
+        Unable to load wallpaper. Please try again later.
       </div>
     );
   }
@@ -41,8 +31,8 @@ const page = async ({ params }: dynamicPageProps) => {
           <CardHeader className="">
             <section className="flex flex-wrap items-center justify-end">
               <a
-                href={getImg.urls.regular}
-                download={`wallpaper-${getImg.id}.jpg`}
+                href={data.urls.regular}
+                download={`wallpaper-${data.id}.jpg`}
                 rel="noopener noreferrer">
                 <Button className="bg-green-400 text-white hover:bg-green-500">
                   Download
@@ -53,23 +43,23 @@ const page = async ({ params }: dynamicPageProps) => {
 
           <CardContent className="space-y-2">
             <Image
-              src={getImg.urls.regular}
-              alt={`wallpaper ${getImg.id}`}
-              width={getImg.width}
-              height={getImg.height}
+              src={data.urls.regular}
+              alt={`wallpaper ${data.id}`}
+              width={data.width}
+              height={data.height}
               priority
               className="mx-auto h-[480px] w-full rounded-lg object-contain"
             />
 
             <div className="flex items-center gap-4">
               <UserAvtar
-                img={getImg.user.profile_image}
-                name={getImg.user.name}
+                img={data.user.profile_image}
+                name={data.user.name}
               />
-              <CardTitle>{getImg.user.name}</CardTitle>
+              <CardTitle>{data.user.name}</CardTitle>
             </div>
 
-            <CardDescription>{getImg.description}</CardDescription>
+            <CardDescription>{data.description}</CardDescription>
           </CardContent>
         </Card>
       </DialogContent>

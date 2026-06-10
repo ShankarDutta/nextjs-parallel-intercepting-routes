@@ -1,32 +1,22 @@
 import SingleWallpaperCard from "@/components/Card/SingleWallpaperCard";
-import apiConfigaration from "@/lib/apiConfigaration";
+import getWallpaperById from "@/lib/getWallpaperById";
 import { dynamicPageProps } from "@/lib/type";
 
 const page = async ({ params }: dynamicPageProps) => {
   const { id } = await params;
-  const { data, isSuccess } = await apiConfigaration();
+  const { data, isSuccess } = await getWallpaperById(id);
 
-  if (!isSuccess) {
+  if (!isSuccess || !data) {
     return (
       <div className="grid h-dvh place-items-center">
-        Unable to load wallpapers. Please try again later.
-      </div>
-    );
-  }
-
-  const getImg = data.find((img) => img.id === id);
-
-  if (!getImg) {
-    return (
-      <div className="grid h-dvh place-items-center">
-        Failed to load wallpaper.
+        Unable to load wallpaper. Please try again later.
       </div>
     );
   }
 
   return (
     <div>
-      <SingleWallpaperCard info={getImg} />
+      <SingleWallpaperCard info={data} />
     </div>
   );
 };
