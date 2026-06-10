@@ -46,3 +46,8 @@ export type UserAvtarType = {
     medium: string;
   };
 };
+
+export type ImageSkeletonProps = {
+  height: number;
+  width: number;
+};

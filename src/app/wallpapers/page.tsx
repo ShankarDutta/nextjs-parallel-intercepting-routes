@@ -14,16 +14,14 @@ const Page = async () => {
   }
 
   return (
-    <section>
-      <WallpaperMisonary>
-        {getWallpaper.data.map((img) => (
-          <WallpaperCard
-            key={img.id}
-            info={img}
-          />
-        ))}
-      </WallpaperMisonary>
-    </section>
+    <WallpaperMisonary>
+      {getWallpaper.data.map((img) => (
+        <WallpaperCard
+          key={img.id}
+          info={img}
+        />
+      ))}
+    </WallpaperMisonary>
   );
 };
 

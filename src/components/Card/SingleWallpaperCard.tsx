@@ -28,7 +28,6 @@ const SingleWallpaperCard = ({ info }: SingleWallpaperCardType) => {
           <a
             href={info.urls.regular}
             download={`wallpaper-${info.id}.jpg`}
-            target="_blank"
             rel="noopener noreferrer">
             <Button className="bg-green-400 text-white hover:bg-green-500">
               Download

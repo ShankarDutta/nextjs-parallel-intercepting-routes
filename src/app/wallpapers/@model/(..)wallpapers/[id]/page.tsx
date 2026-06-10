@@ -35,7 +35,6 @@ const page = async ({ params }: dynamicPageProps) => {
               <a
                 href={getImg.urls.regular}
                 download={`wallpaper-${getImg.id}.jpg`}
-                target="_blank"
                 rel="noopener noreferrer">
                 <Button className="bg-green-400 text-white hover:bg-green-500">
                   Download
