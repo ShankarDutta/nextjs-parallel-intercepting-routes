@@ -1,6 +1,7 @@
 "use server";
 
 import ky from "ky";
+import { serverEnv } from "./env/serverEnv";
 import { WallpaperType } from "./type";
 
 const apiConfigaration = async () => {
@@ -11,7 +12,7 @@ const apiConfigaration = async () => {
           per_page: 26,
         },
         headers: {
-          Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
+          Authorization: `Client-ID ${serverEnv.UNSPLASH_ACCESS_KEY}`,
         },
       })
       .json<WallpaperType[]>();

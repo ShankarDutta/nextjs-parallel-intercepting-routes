@@ -1,5 +1,6 @@
 "use server";
 import ky from "ky";
+import { serverEnv } from "./env/serverEnv";
 import { WallpaperType } from "./type";
 
 const getWallpaperById = async (id: string) => {
@@ -7,7 +8,7 @@ const getWallpaperById = async (id: string) => {
     const wallpaper = await ky
       .get(`https://api.unsplash.com/photos/${id}`, {
         headers: {
-          Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
+          Authorization: `Client-ID ${serverEnv.UNSPLASH_ACCESS_KEY}`,
         },
       })
       .json<WallpaperType>();
