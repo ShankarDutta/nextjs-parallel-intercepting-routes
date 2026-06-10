@@ -58,7 +58,7 @@ const page = async ({ params }: dynamicPageProps) => {
               width={getImg.width}
               height={getImg.height}
               priority
-              className="mx-auto h-120 w-full rounded-lg object-contain"
+              className="mx-auto h-[480px] w-full rounded-lg object-contain"
             />
 
             <div className="flex items-center gap-4">
