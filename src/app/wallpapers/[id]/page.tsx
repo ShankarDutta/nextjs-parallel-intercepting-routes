@@ -4,7 +4,15 @@ import { dynamicPageProps } from "@/lib/type";
 
 const page = async ({ params }: dynamicPageProps) => {
   const { id } = await params;
-  const { data } = await apiConfigaration();
+  const { data, isSuccess } = await apiConfigaration();
+
+  if (!isSuccess) {
+    return (
+      <div className="grid h-dvh place-items-center">
+        Unable to load wallpapers. Please try again later.
+      </div>
+    );
+  }
 
   const getImg = data.find((img) => img.id === id);
 
