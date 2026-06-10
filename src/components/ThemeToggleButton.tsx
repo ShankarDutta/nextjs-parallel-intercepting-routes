@@ -9,7 +9,10 @@ const ThemeToggleButton = () => {
   return (
     <button
       type="button"
-      title="Theme-Button"
+      title="Toggle theme"
+      aria-label={
+        theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+      }
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="flex cursor-pointer items-center rounded-lg p-2 hover:bg-black/4 dark:hover:bg-white/4">
       <Sun

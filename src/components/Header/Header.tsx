@@ -45,9 +45,11 @@ const Header = () => {
 
           <Link
             href="https://github.com/ShankarDutta/nextjs-parallel-intercepting-routes"
+            target="_blank"
             rel="noopener noreferrer"
-            className={buttonVariants({ variant: "ghost" })}>
+            className={buttonVariants({ variant: "ghost", size: "lg" })}>
             <svg
+              className="size-5"
               role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
