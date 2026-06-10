@@ -1,4 +1,4 @@
-import { Button } from "@/components/shadcnui/button";
+import { buttonVariants } from "@/components/shadcnui/button";
 import { ArrowUpRightIcon } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -23,21 +23,19 @@ const page = () => {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link href="/wallpapers">
-            <Button size="lg">
-              Explore Route Demo
-              <ArrowUpRightIcon className="ml-1.5 size-4" />
-            </Button>
+          <Link
+            href="/wallpapers"
+            className={buttonVariants({ size: "lg" })}>
+            Explore Route Demo
+            <ArrowUpRightIcon className="ml-1.5 size-4" />
           </Link>
 
           <Link
             href="https://github.com/ShankarDutta/nextjs-parallel-intercepting-routes"
-            target="_blank">
-            <Button
-              variant="ghost"
-              size="lg">
-              View Source Code
-            </Button>
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ size: "lg", variant: "ghost" })}>
+            View Source Code
           </Link>
         </div>
       </div>
