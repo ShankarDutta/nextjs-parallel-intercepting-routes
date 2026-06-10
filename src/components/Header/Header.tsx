@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ThemeToggleButton from "../ThemeToggleButton";
+import ThemeToggleButton from "../Buttons/ThemeToggleButton";
 import { buttonVariants } from "../shadcnui/button";
 import { Separator } from "../shadcnui/separator";
 

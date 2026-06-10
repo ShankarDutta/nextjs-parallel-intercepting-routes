@@ -1,4 +1,3 @@
-import { Button } from "@/components/shadcnui/button";
 import {
   Card,
   CardContent,
@@ -7,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/shadcnui/card";
 import { Dialog, DialogContent } from "@/components/shadcnui/dialog";
-import UserAvtar from "@/components/UserAvtar";
+import UserAvatar from "@/components/UserAvatar";
 import getWallpaperById from "@/lib/getWallpaperById";
 import { dynamicPageProps } from "@/lib/type";
 import Image from "next/image";
@@ -33,10 +32,10 @@ const page = async ({ params }: dynamicPageProps) => {
               <a
                 href={data.urls.regular}
                 download={`wallpaper-${data.id}.jpg`}
-                rel="noopener noreferrer">
-                <Button className="bg-green-400 text-white hover:bg-green-500">
-                  Download
-                </Button>
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-green-400 px-4 py-2 text-white hover:bg-green-500">
+                Download
               </a>
             </section>
           </CardHeader>
@@ -52,7 +51,7 @@ const page = async ({ params }: dynamicPageProps) => {
             />
 
             <div className="flex items-center gap-4">
-              <UserAvtar
+              <UserAvatar
                 img={data.user.profile_image}
                 name={data.user.name}
               />

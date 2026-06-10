@@ -1,7 +1,7 @@
 import { UserAvtarType } from "@/lib/type";
 import { Avatar, AvatarFallback, AvatarImage } from "./shadcnui/avatar";
 
-const UserAvtar = ({ img, name }: UserAvtarType) => {
+const UserAvatar = ({ img, name }: UserAvtarType) => {
   const splitName = name.trim().split(" ");
 
   const initials =
@@ -16,4 +16,4 @@ const UserAvtar = ({ img, name }: UserAvtarType) => {
   );
 };
 
-export default UserAvtar;
+export default UserAvatar;

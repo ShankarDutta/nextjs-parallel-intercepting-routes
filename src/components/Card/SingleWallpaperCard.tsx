@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../shadcnui/card";
-import UserAvtar from "../UserAvtar";
+import UserAvatar from "../UserAvatar";
 
 const SingleWallpaperCard = ({ info }: SingleWallpaperCardType) => {
   return (
@@ -28,10 +28,10 @@ const SingleWallpaperCard = ({ info }: SingleWallpaperCardType) => {
           <a
             href={info.urls.regular}
             download={`wallpaper-${info.id}.jpg`}
-            rel="noopener noreferrer">
-            <Button className="bg-green-400 text-white hover:bg-green-500">
-              Download
-            </Button>
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg bg-green-400 px-4 py-2 text-white hover:bg-green-500">
+            Download
           </a>
         </section>
       </CardHeader>
@@ -47,7 +47,7 @@ const SingleWallpaperCard = ({ info }: SingleWallpaperCardType) => {
         />
 
         <div className="flex items-center gap-4">
-          <UserAvtar
+          <UserAvatar
             img={info.user.profile_image}
             name={info.user.name}
           />
